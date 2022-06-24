@@ -20,6 +20,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.content.res.ResourcesCompat
 import com.google.android.material.snackbar.Snackbar
 
 class MainActivity : AppCompatActivity() {
@@ -147,19 +148,35 @@ class MainActivity : AppCompatActivity() {
        when (lemonadeState) {
             SELECT -> {
                 textAction.text = getString(R.string.lemon_select)
-                lemonImage?.setBackgroundResource(R.drawable.lemon_tree)
+                lemonImage?.setImageDrawable(
+                    ResourcesCompat.getDrawable(
+                        resources, R.drawable.lemon_tree, applicationContext.theme
+                    )
+                )
             }
             SQUEEZE -> {
                 textAction.text = getString(R.string.lemon_squeeze)
-                lemonImage?.setBackgroundResource(R.drawable.lemon_squeeze)
+                lemonImage?.setImageDrawable(
+                    ResourcesCompat.getDrawable(
+                        resources, R.drawable.lemon_squeeze, applicationContext.theme
+                    )
+                )
             }
             DRINK -> {
                 textAction.text = getString(R.string.lemon_drink)
-                lemonImage?.setBackgroundResource(R.drawable.lemon_drink)
+                lemonImage?.setImageDrawable(
+                    ResourcesCompat.getDrawable(
+                        resources, R.drawable.lemon_drink, applicationContext.theme
+                    )
+                )
             }
             RESTART -> {
                 textAction.text = getString(R.string.lemon_empty_glass)
-                lemonImage?.setBackgroundResource(R.drawable.lemon_restart)
+                lemonImage?.setImageDrawable(
+                    ResourcesCompat.getDrawable(
+                        resources, R.drawable.lemon_restart, applicationContext.theme
+                    )
+                )
             }
         }
         // TODO: set up a conditional that tracks the lemonadeState
